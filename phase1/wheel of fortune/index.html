@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title>幸运大转盘</title>
+	<link rel="stylesheet" href="./css/index.css" />
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.tap.js"></script>
+	<script>
+		! function (e, i) {
+			var t = e.documentElement,
+				m = "orientationchange" in window ? "orientationchange" : "resize";
+			var s = function () {
+				var e = t.clientWidth;
+				e > 750 && (e = 750), t.style.fontSize = 200 * (e / 750) + "px"
+			};
+			s(), e.addEventListener && i.addEventListener(m, s, !1)
+		}(document, window);
+	</script>
+	<script src="./js/awardRotate.js"></script>
+	<script src="./js/index.js"></script>
+</head>
+<body>
+
+	<!-- 出场红包 -->
+	<div id="fst_prize">
+		<div class="alertbg_p60"></div>
+		<div class="prize_a">
+			<button class="btn"></button>
+		</div>
+		<i class="close"></i>
+	</div>
+
+	
+
+</body>
+<script type="text/javascript">
+	var u = navigator.userAgent;
+	//var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if (isiOS) {
+		document.writeln(
+			'<div style="text-align:center;color:#fff;font-size:0.09rem;padding-top:0.1rem;">兑换项与活动和设备生产商Apple Inc.公司无关</div>'
+		);
+	}
+</script>
+</html>
