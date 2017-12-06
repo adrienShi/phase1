@@ -50,7 +50,7 @@ function rotateFn(){
     surface.removeClass('disk_animation')
     surface.rotate({
         angle: 0,
-        animateTo: 1800,        // 旋转角度 *360
+        animateTo: 1920,        // 旋转角度 *360
         duration: 3000,         // 旋转时间
         callback:function (){   //旋转后执行
             winningShow();
