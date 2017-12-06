@@ -11,6 +11,7 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/jquery.tap.js"></script>
 	<script>
+		//rem
 		! function (e, i) {
 			var t = e.documentElement,
 				m = "orientationchange" in window ? "orientationchange" : "resize";
@@ -35,17 +36,62 @@
 		<i class="close"></i>
 	</div>
 
-	
+	<!-- 说明按钮 -->
+	<button class="rule_btn"></button>
+
+	<!-- 说明弹窗 -->
+	<div class="rule_bar">
+		<div class="alertbg_p60"></div>
+		<div class="text_bar">
+			<i class="close"></i>
+			<h3>活动规则</h3>
+			<p class="mb75">活動说明：参与活动即有机会获得幸运奖，每天8次免费抽奖机会，此活动为概率中奖，奖品数量有限，祝君好运。</p>
+			<p>一等奖：OPPO R11 手机一部</p>
+			<p>二等奖：888元现金红包</p>
+			<p>三等奖：200元现金红包</p>
+			<p class="mb75">四等奖：50元现金红包</p>
+			<p>重要声明：</p>
+			<p>1.实物类奖品将在活动结束后5-10个工作日内安排发货，请耐心等待</p>
+			<p>2.通过非法途径获得奖品的，主办方有权不提供奖品</p>
+		</div>
+	</div>
+
+	<!-- 中奖弹窗 -->
+	<div id="winning">
+		<div class="alertbg_p90"></div>
+		<i class="close"></i>
+		<div class="winning_bar show_a">
+			<div class="bg_light bg_light_animation"></div>
+			<div class="man man_animation"></div>
+			<div class="title"></div>
+			<div class="c_bar">
+				<a href="javascript:;" class="banner">
+					<img class="banner_img" src="./images/banner.jpg" alt="">
+				</a>
+				<p class="banner_text">恭喜您获得OPPO R11手机一部</p>
+				<button class="winning_btn"></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 我的奖品 -->
+	<a href="./list.html" class="my_prize_bt"></a>
+
+	<!-- title -->
+	<img class="title_txt" src="./images/title_txt.png" alt="幸运大转盘抽奖送手机" />
+
+	<!-- 今日次数 -->
+	<p class="count_bar">今日免费：<i>8</i>次</p>
+
+	<!-- 圆盘 -->
+	<div class="disk">
+		<div class="side"></div>
+		<div class="surface disk_animation"></div>
+		<div class="pointer"></div>
+		<div class="" id="finger"></div>
+	</div>
+
+	<div class="ios">兑换项与活动和设备生产商Apple Inc.公司无关</div>
 
 </body>
-<script type="text/javascript">
-	var u = navigator.userAgent;
-	//var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-	if (isiOS) {
-		document.writeln(
-			'<div style="text-align:center;color:#fff;font-size:0.09rem;padding-top:0.1rem;">兑换项与活动和设备生产商Apple Inc.公司无关</div>'
-		);
-	}
-</script>
 </html>
