@@ -53,11 +53,14 @@ function rotateFn(){
         animateTo: 1920,        // 旋转角度 *360
         duration: 3000,         // 旋转时间
         callback:function (){   //旋转后执行
-            winningShow();
-            setTimeout(function(){
-                surface.addClass('disk_animation');
-                flag = true;
-            },100);
+            winning_load(function(){
+                winningShow();
+                setTimeout(function(){
+                    surface.addClass('disk_animation');
+                    flag = true;
+                },100);
+            })
+            
         }
     });
 };
@@ -104,8 +107,10 @@ function upCount(){
 
 //中奖弹出开启
 function winningShow(){
-    $('#winning').show(function(){
-        //
+    winning_load(function(){
+        $('#winning').show(function(){
+            //
+        })
     })
 }
 
@@ -142,6 +147,37 @@ function clearFinger(){
     clearInterval(timer);
 }
 
+//中奖装载 
+function winning_load(fn){
+    $.ajax({
+        url: 'http://18.13ks.cn/ashow?callback=test',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        data: {test: 'test'},
+    })
+    .done(function(r) {
+        console.log(r);
+        if(r.status == '1') {
+            $('#winning .banner_img').attr('src', r.result.pic);
+            $('#winning .banner_text').text(r.result.title);
+            $('#winning .winning_btn').attr('href', r.result.url);
+            $('#winning .banner').attr('href', r.result.url);
+            fn && fn();
+        } else {
+            alert('链接超时！')
+        }
+        
+    })
+    .fail(function() {
+        console.log("error");
+        alert('链接超时！')
+    })
+    .always(function() {
+        console.log("complete");
+    });
+}
+
 $(function(){
     chaekPhone();
     fst_prize_start();
@@ -154,17 +190,3 @@ $(function(){
     finger_animation();
 });
 
-$.ajax({
-	url: './json/test.json',
-	type: 'GET',
-	data: {param1: 'value1'},
-})
-.done(function(r) {
-	console.log(r);
-})
-.fail(function() {
-	console.log("error");
-})
-.always(function() {
-	console.log("complete");
-});
