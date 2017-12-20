@@ -58,7 +58,7 @@ function rotateFn(){
                 setTimeout(function(){
                     surface.addClass('disk_animation');
                     flag = true;
-                },100);
+                },500);
             })
             
         }
