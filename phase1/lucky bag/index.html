@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title>中现金大奖，折幸运福袋</title>
+	<link rel="stylesheet" href="./css/index.css" />
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.tap.js"></script>
+	<script>
+		//rem
+		! function (e, i) {
+			var t = e.documentElement,
+				m = "orientationchange" in window ? "orientationchange" : "resize";
+			var s = function () {
+				var e = t.clientWidth;
+				e > 750 && (e = 750), t.style.fontSize = 200 * (e / 750) + "px"
+			};
+			s(), e.addEventListener && i.addEventListener(m, s, !1)
+		}(document, window);
+	</script>
+	<script src="./js/index.js"></script>
+</head>
+<body>
+
+	<!-- 说明按钮 -->
+	<button class="rule_btn"></button>
+
+	<!-- 我的奖品 -->
+	<a href="./list.html" class="my_prize_bt"></a>
+
+	<!-- 出场红包 -->
+	<div id="fst_prize">
+		<div class="alertbg_p60"></div>
+		<div class="prize_a">
+			<button class="btn"></button>
+		</div>
+		<i class="close"></i>
+	</div>
+
+	<!-- 说明弹窗 -->
+	<div class="rule_bar">
+		<div class="alertbg_p60"></div>
+		<div class="text_bar">
+			<i class="close"></i>
+			<h3>活动规则</h3>
+			<p class="mb75">活動说明：参与活动即有机会获得幸运奖，每天8次免费抽奖机会，此活动为概率中奖，奖品数量有限，祝君好运。</p>
+			<p>一等奖：888元现金红包</p>
+			<p>二等奖：666元现金红包</p>
+			<p>三等奖：222元现金红包</p>
+			<p>四等奖：88元现金红包</p>
+			<p>五等奖：66元现金红包</p>
+			<p class="mb75">六等奖：5元现金红包</p>
+			<p>重要声明：</p>
+			<p>1.实物类奖品将在活动结束后5-10个工作日内安排发货，请耐心等待</p>
+			<p>2.通过非法途径获得奖品的，主办方有权不提供奖品</p>
+		</div>
+	</div>
+
+	<!-- 中奖弹窗 -->
+	<div id="winning">
+		<div class="alertbg_p90"></div>
+		<i class="close"></i>
+		<div class="winning_bar show_a">
+			<div class="bg_light bg_light_animation"></div>
+			<div class="man"></div>
+			<div class="title"></div>
+			<div class="c_bar">
+				<a href="javascript:;" class="banner">
+					<img class="banner_img" src="./images/banner.jpg" alt="">
+				</a>
+				<p class="banner_text">恭喜您获得OPPO R11手机一部</p>
+				<a href="javascript:;" class="winning_btn"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 今日次数 -->
+	<p class="count_bar">今日免费：<i>8</i>次</p>
+
+	<ul class="bag_bar">
+		<li class="type1"></li>
+		<li class="type1"></li>
+		<li class="type1"></li>
+		<li class="type1"></li>
+		<li class="type1"></li>
+		<li class="type1"></li>
+	</ul>
+
+	<div class="ios">兑换项与活动和设备生产商Apple Inc.公司无关</div>
+
+	<div class="bag_list">
+		<ul>
+			<li class="b888"></li>
+			<li class="b666"></li>
+			<li class="b222"></li>
+			<li class="b66"></li>
+			<li class="b5"></li>
+		</ul>
+	</div>
+
+</body>
+</html>
