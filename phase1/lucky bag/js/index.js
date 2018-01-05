@@ -69,7 +69,7 @@ function winningCloseStart(){
 //中奖装载 
 function winning_load(fn){
     $.ajax({
-        url: 'http://18.13ks.cn/ashow?callback=test',
+        url: 'https://lp.17tuiguang.com/ashow',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',

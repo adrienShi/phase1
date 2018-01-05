@@ -15,11 +15,10 @@ $(function(){
 	}
 	
 	$.ajax({
-        url: 'http://18.13ks.cn/alist?callback=test',
+        url: 'https://lp.17tuiguang.com/alist',
         type: 'GET',
         dataType: 'jsonp',
-        jsonp: 'callback',
-        data: {test: 'test'},
+        jsonp: 'callback'
     })
 	.done(function(r) {
         //console.log(r);
