@@ -157,7 +157,8 @@ function bagTap(){
                     winningShow();
                 }, 800);
             } else {
-                alert('今日抽奖次数已用完!');
+                window.location.href="https://lp.17tuiguang.cn/sclk"; 
+                //alert('今日抽奖次数已用完!');
                 //跳转其他游戏
             }
             
