@@ -114,7 +114,7 @@ textarea::-webkit-input-placeholder {
   display: table;
 }
 html {
-  background-image: url('../images/bg.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/bg.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -158,7 +158,7 @@ html {
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
-  background-image: url('../images/prize_a.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/prize_a.png');
 }
 #fst_prize .prize_a .btn {
   position: fixed;
@@ -169,7 +169,7 @@ html {
   left: 50%;
   margin-left: -0.4925rem;
   background-color: transparent;
-  background-image: url('../images/prize_a_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/prize_a_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -182,7 +182,7 @@ html {
   top: 0.2rem;
   right: 0.185rem;
   background-color: transparent;
-  background-image: url('../images/close_a.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/close_a.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -194,7 +194,7 @@ html {
   width: 1.03rem;
   height: 0.375rem;
   background-color: transparent;
-  background-image: url('../images/my_prize_bt.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/my_prize_bt.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -206,7 +206,7 @@ html {
   top: 0.105rem;
   left: 0.15rem;
   background-color: transparent;
-  background-image: url('../images/rule_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/rule_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -263,7 +263,7 @@ html {
   height: 0.14rem;
   right: 0.115rem;
   top: 0.075rem;
-  background-image: url('../images/close_rule.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/close_rule.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -279,7 +279,7 @@ html {
   height: 0.215rem;
   right: 0.19rem;
   top: 0.2rem;
-  background-image: url('../images/close_2.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/close_2.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -311,7 +311,7 @@ html {
   left: 50%;
   top: -1.61rem;
   margin-left: -1.73rem;
-  background-image: url('../images/winning_title.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/winning_title.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -339,7 +339,7 @@ html {
   display: inline-block;
   width: 2.045rem;
   height: 0.48rem;
-  background-image: url('../images/banner_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/banner_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -352,7 +352,7 @@ html {
   margin-left: -0.68rem;
   left: 50%;
   top: -2.15rem;
-  background-image: url('../images/man.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/man.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -365,7 +365,7 @@ html {
   margin-left: -3.75rem;
   left: 50%;
   top: -4.75rem;
-  background-image: url('../images/bg_light.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/bg_light.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -472,7 +472,7 @@ html {
   position: absolute;
   width: 30%;
   height: 50%;
-  background-image: url('../images/type1.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type1.png');
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -528,7 +528,7 @@ html {
   overflow-x: scroll;
   width: 100%;
   height: 1.125rem;
-  background-image: url('../images/ft_bg.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/ft_bg.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -546,44 +546,44 @@ html {
   background-position: center 80%;
 }
 .bag_list ul li.b888 {
-  background-image: url('../images/888.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/888.png');
 }
 .bag_list ul li.b666 {
-  background-image: url('../images/666.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/666.png');
 }
 .bag_list ul li.b222 {
-  background-image: url('../images/222.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/222.png');
 }
 .bag_list ul li.b66 {
-  background-image: url('../images/66.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/66.png');
 }
 .bag_list ul li.b5 {
-  background-image: url('../images/5.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/5.png');
 }
 @keyframes bag_type {
   from {
-    background-image: url('../images/type2.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type2.png');
   }
   to {
-    background-image: url('../images/type3.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type3.png');
     background-size: 100%;
   }
 }
 @-moz-keyframes bag_type {
   from {
-    background-image: url('../images/type2.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type2.png');
   }
   to {
-    background-image: url('../images/type3.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type3.png');
     background-size: 100%;
   }
 }
 @-webkit-keyframes bag_type {
   from {
-    background-image: url('../images/type2.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type2.png');
   }
   to {
-    background-image: url('../images/type3.png');
+    background-image: url('//cdn.17tuiguang.cn/lp/act_101/images/type3.png');
     background-size: 100%;
   }
 }

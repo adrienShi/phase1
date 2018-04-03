@@ -114,7 +114,7 @@ textarea::-webkit-input-placeholder {
   display: table;
 }
 html {
-  background-image: url('../images/bg.jpg');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/bg.jpg');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -158,7 +158,7 @@ html {
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
-  background-image: url('../images/prize_a.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/prize_a.png');
 }
 #fst_prize .prize_a .btn {
   position: fixed;
@@ -169,7 +169,7 @@ html {
   left: 50%;
   margin-left: -0.4925rem;
   background-color: transparent;
-  background-image: url('../images/prize_a_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/prize_a_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -182,7 +182,7 @@ html {
   top: 0.2rem;
   right: 0.185rem;
   background-color: transparent;
-  background-image: url('../images/close_a.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/close_a.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -194,7 +194,7 @@ html {
   width: 0.91rem;
   height: 0.905rem;
   background-color: transparent;
-  background-image: url('../images/my_prize_bt.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/my_prize_bt.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -206,7 +206,7 @@ html {
   top: 0.105rem;
   left: 0.15rem;
   background-color: transparent;
-  background-image: url('../images/rule_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/rule_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -243,13 +243,13 @@ html {
   width: 3.4rem;
   height: 3.4rem;
   background-color: transparent;
-  background-image: url('../images/light.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/light.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
 }
 .disk .side_2 {
-  background-image: url('../images/light_2.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/light_2.png');
 }
 .disk .surface {
   position: absolute;
@@ -257,7 +257,7 @@ html {
   width: 3.4rem;
   height: 3.4rem;
   background-color: transparent;
-  background-image: url('../images/disk_surface.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/disk_surface.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -267,7 +267,7 @@ html {
   z-index: 999;
   width: 1.75rem;
   height: 1.75rem;
-  background-image: url('../images/pointer_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/pointer_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -285,22 +285,22 @@ html {
   left: 1.9rem;
   top: 1.85rem;
   z-index: 1000;
-  background-image: url('../images/finger_1.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/finger_1.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
 }
 .disk #finger.finger_animation_1 {
-  background-image: url('../images/finger_1.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/finger_1.png');
 }
 .disk #finger.finger_animation_2 {
-  background-image: url('../images/finger_2.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/finger_2.png');
 }
 .disk #finger.finger_animation_3 {
-  background-image: url('../images/finger_3.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/finger_3.png');
 }
 .disk #finger.finger_animation_4 {
-  background-image: url('../images/finger_4.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/finger_4.png');
 }
 .disk_animation {
   animation: rotatedot 24s linear infinite;
@@ -391,7 +391,7 @@ html {
   height: 0.14rem;
   right: 0.115rem;
   top: 0.075rem;
-  background-image: url('../images/close_rule.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/close_rule.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -407,7 +407,7 @@ html {
   height: 0.215rem;
   right: 0.19rem;
   top: 0.2rem;
-  background-image: url('../images/close_2.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/close_2.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -439,7 +439,7 @@ html {
   left: 50%;
   top: -1.61rem;
   margin-left: -1.73rem;
-  background-image: url('../images/winning_title.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/winning_title.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -467,7 +467,7 @@ html {
   display: inline-block;
   width: 2.045rem;
   height: 0.48rem;
-  background-image: url('../images/banner_btn.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/banner_btn.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -480,7 +480,7 @@ html {
   margin-left: -0.99rem;
   left: 50%;
   top: -1.7rem;
-  background-image: url('../images/man.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/man.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -493,7 +493,7 @@ html {
   margin-left: -3.75rem;
   left: 50%;
   top: -4.25rem;
-  background-image: url('../images/bg_light.png');
+  background-image: url('//cdn.17tuiguang.cn/lp/act_100/images/bg_light.png');
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
