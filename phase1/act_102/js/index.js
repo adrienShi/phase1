@@ -28,7 +28,8 @@ function moveStart() {
         if(!btn_flag)return;
 		is_run = true;
 		click_x = e.changedTouches[0].clientX;
-		click_y = e.changedTouches[0].clientY;
+        click_y = e.changedTouches[0].clientY;
+        individual.css('transition', 'all 0s');
         $(".win").on('touchmove', function (e) { e.preventDefault() });
     });
 
@@ -40,16 +41,14 @@ function moveStart() {
             now_y = move_y - click_y;
 			if (now_y > 0) {
 				individual.css({
-					'transform': 'translate3d(' + now_x + 'px,' + now_y + 'px,0) rotate(-3deg)',
-					'transition': '0s linear'
+					'transform': 'translate3d(' + now_x + 'px,' + now_y + 'px,0) rotate(-3deg)'
                 });
                 btnState(deal_btn, 1);
                 btnState(fail_btn, 1.2);
 
 			} else if (now_y < 0) {
 				individual.css({
-					'transform': 'translate3d(' + now_x + 'px,' + now_y + 'px,0) rotate(3deg)',
-					'transition': '0s linear'
+					'transform': 'translate3d(' + now_x + 'px,' + now_y + 'px,0) rotate(3deg)'
 				});
 				btnState(deal_btn, 1.2);
                 btnState(fail_btn, 1);
@@ -98,7 +97,10 @@ function loopPage(){
         .clone()
         .css({
             'zIndex': '100',
-            'transform': 'scale(0.94) translate3d(0,0,0) rotate(0deg) '
+            'transform': 'scale(0.94) translate3d(0,0,0) rotate(0deg) ',
+            'transition': 'transform 0.4s linear',
+            'transform': 'translate(0, 0, 0)',
+            'will-change': 'transform'
         });
     $('.page')
         .eq(0)
@@ -159,6 +161,13 @@ function explain_start() {
         $('.rule_bar').hide();
     });
 }
+
+$(document).on("touchmove",function(e){
+    if(!$(e.target).hasClass('page_box'))
+    {
+        e.preventDefault();
+    }
+});
 
 $(function(){
     deal_start();
