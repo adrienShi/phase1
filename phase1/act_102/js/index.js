@@ -3,7 +3,7 @@ var is_run = false;
 var btn_flag = true;
 
 function distribution_zIndex() {
-	var individual = $('.individual');
+	var individual = $('.page');
 	var le = individual.length;
 	for (var m = 0; m < le; m += 1) {
 		individual.eq(m).css('z-index', le + 100 - m);
@@ -17,8 +17,8 @@ function distribution_zIndex() {
 
 function moveStart() {
 
-	var container = $('.container');
-	var individual = $('.individual').eq(0);
+	var container = $('.page_box');
+	var individual = $('.page').eq(0);
     var click_x, click_y, move_x, move_y, now_x, now_y;
     var deal_btn = $('.deal_btn'),
         fail_btn = $('.fail_btn');
@@ -29,8 +29,8 @@ function moveStart() {
 		is_run = true;
 		click_x = e.changedTouches[0].clientX;
 		click_y = e.changedTouches[0].clientY;
-		$(".win").on('touchmove', function (e) { e.preventDefault() });
-	});
+        $(".win").on('touchmove', function (e) { e.preventDefault() });
+    });
 
 	container.on("touchmove", function (e) {
 		if (is_run) {
@@ -38,7 +38,6 @@ function moveStart() {
 			move_y = e.changedTouches[0].clientY;
 			now_x = move_x - click_x;
             now_y = move_y - click_y;
-            
 			if (now_y > 0) {
 				individual.css({
 					'transform': 'translate3d(' + now_x + 'px,' + now_y + 'px,0) rotate(-3deg)',
@@ -94,17 +93,17 @@ function moveStart() {
 }
 
 function loopPage(){
-    var clon = $('.individual')
+    var clon = $('.page')
         .eq(0)
         .clone()
         .css({
             'zIndex': '100',
             'transform': 'scale(0.94) translate3d(0,0,0) rotate(0deg) '
         });
-    $('.individual')
+    $('.page')
         .eq(0)
         .remove();
-    $('.container')
+    $('.page_box')
         .append(clon)
         .off();
     moveStart();
@@ -117,7 +116,7 @@ function deal_start() {
             if(!btn_flag)return;
             btn_flag = false;
             e.preventDefault();
-            $('.individual')
+            $('.page')
                 .eq(0)
                 .css({
                     'transition': 'transform 0.4s linear',
@@ -137,7 +136,7 @@ function fail_start(){
             if(!btn_flag)return;
             btn_flag = false;
             e.preventDefault();
-            $('.individual')
+            $('.page')
                 .eq(0)
                 .css({
                     'transition': 'transform 0.4s linear',

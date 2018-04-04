@@ -144,9 +144,17 @@ body {
   bottom: 0.09rem;
 }
 .c {
+  position: relative;
   display: inline-block;
   width: 3.275rem;
   height: 3.69rem;
+}
+.c .page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 .c .t {
   width: 100%;
@@ -199,25 +207,26 @@ body {
 .c .b .txt {
   font-size: 0.16rem;
 }
-.c .b .deal_btn {
+.c .deal_btn {
   width: 1.005rem;
   height: 0.78rem;
   background-image: url('//cdn.17tuiguang.cn/lp/act_102/images/deal_btn.png');
   left: 0.4rem;
 }
-.c .b .fail_btn {
+.c .fail_btn {
   width: 1rem;
   height: 0.78rem;
   background-image: url('//cdn.17tuiguang.cn/lp/act_102/images/fail_btn.png');
   right: 0.4rem;
 }
-.c .b .deal_btn,
-.c .b .fail_btn {
+.c .deal_btn,
+.c .fail_btn {
   position: absolute;
   background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
   bottom: -0.35rem;
+  z-index: 999;
 }
 .alertbg_p60 {
   background: rgba(0, 0, 0, 0.6);
