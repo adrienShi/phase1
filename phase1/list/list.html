@@ -24,7 +24,7 @@
         function testingHost() {
 			var host = window.location.host;
 			var hostStrArr = host.split('.');
-			return hostStrArr[hostStrArr.length];
+			return hostStrArr[hostStrArr.length-1];
 		}
 
 		var hostEd = testingHost() ? testingHost() : 'cn';
