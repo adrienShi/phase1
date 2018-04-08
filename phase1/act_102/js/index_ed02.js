@@ -172,7 +172,7 @@ $(document).on("touchmove",function(e){
 
 function page_load() {
     $.ajax({
-        url: 'https://lp.17tuiguang.'+ hostEd +'/ashow?adNum=6',
+        url: '//lp.17tuiguang.'+ hostEd +'/ashow?adNum=6',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',

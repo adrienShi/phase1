@@ -15,7 +15,7 @@ $(function(){
 	}
 	
 	$.ajax({
-        url: 'https://lp.17tuiguang.com/alist',
+        url: '//lp.17tuiguang.com/alist',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback'

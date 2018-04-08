@@ -74,7 +74,7 @@ function rotateEv(){
             upCount();
             
         } else {
-            window.location.href="https://lp.17tuiguang."+ hostEd +"/sclk"; 
+            window.location.href="//lp.17tuiguang."+ hostEd +"/sclk"; 
             //alert('今日抽奖次数已用完!');
             //跳转其他游戏
         }
@@ -151,7 +151,7 @@ function clearFinger(){
 //中奖装载 
 function winning_load(fn){
     $.ajax({
-        url: 'https://lp.17tuiguang.'+ hostEd +'/ashow',
+        url: '//lp.17tuiguang.'+ hostEd +'/ashow',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -180,8 +180,8 @@ function winning_load(fn){
 }
 
 function setHostEd(){
-    $('#my_prize_bt').attr('href','https://lp.17tuiguang.'+ hostEd +'/lp/list.html');
-    $('#title_txt').attr('src','https://cdn.17tuiguang.'+ hostEd +'/lp/act_100/images/title_txt.png');
+    $('#my_prize_bt').attr('href','//lp.17tuiguang.'+ hostEd +'/lp/list.html');
+    $('#title_txt').attr('src','//cdn.17tuiguang.'+ hostEd +'/lp/act_100/images/title_txt.png');
 }
 
 $(function(){
