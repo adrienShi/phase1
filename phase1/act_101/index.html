@@ -7,9 +7,6 @@
 	<meta content="telephone=no" name="format-detection" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
 	<title>中现金大奖，折幸运福袋</title>
-	<link rel="stylesheet" href="https://cdn.17tuiguang.cn/lp/act_100/css/index.css" />
-	<script src="https://cdn.17tuiguang.cn/lp/act_100/js/jquery.min.js"></script>
-	<script src="https://cdn.17tuiguang.cn/lp/act_100/js/jquery.tap.js"></script>
 	<script>
 		//rem
 		! function (e, i) {
@@ -20,9 +17,33 @@
 				e > 750 && (e = 750), t.style.fontSize = 200 * (e / 750) + "px"
 			};
 			s(), e.addEventListener && i.addEventListener(m, s, !1)
+
 		}(document, window);
+
+		function testingHost() {
+			var host = window.location.host;
+			var hostStrArr = host.split('.');
+			return hostStrArr[hostStrArr.length];
+		}
+
+		var hostEd = testingHost() ? testingHost() : 'cn';
+
+		//onload
+		function onLoad(){
+			
+			document.write(
+				'<link rel="stylesheet" href="//cdn.17tuiguang.'+ hostEd +'/lp/act_101/css/index_'+ hostEd +'.css" />',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_101/js/jquery.min.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_101/js/jquery.tap.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_101/js/index_ed04.js"><\/script>'
+			);
+		
+		}
+
+		onLoad();
+		
 	</script>
-	<script src="https://cdn.17tuiguang.cn/lp/act_100/js/index_ed03.js"></script>
+	
 </head>
 <body>
 
@@ -30,7 +51,7 @@
 	<button class="rule_btn"></button>
 
 	<!-- 我的奖品 -->
-	<a href="https://lp.17tuiguang.cn/lp/list.html" class="my_prize_bt"></a>
+	<a href="https://lp.17tuiguang.cn/lp/list.html" class="my_prize_bt" id="my_prize_bt"></a>
 
 	<!-- 出场红包 -->
 	<div id="fst_prize">
@@ -70,7 +91,7 @@
 			<div class="title"></div>
 			<div class="c_bar">
 				<a href="javascript:;" class="banner">
-					<img class="banner_img" src="https://cdn.17tuiguang.cn/lp/act_100/images/banner.jpg" alt="">
+					<img class="banner_img" src="" alt="" id="banner_img">
 				</a>
 				<p class="banner_text">恭喜您获得OPPO R11手机一部</p>
 				<a href="javascript:;" class="winning_btn"></a>

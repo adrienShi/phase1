@@ -8,9 +8,7 @@
     <meta content="telephone=no" name="format-detection" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
     <title>我的奖品</title>
-    <link rel="stylesheet" href="https://cdn.17tuiguang.cn/lp/list/css/list.css" />
-    <script src="https://cdn.17tuiguang.cn/lp/list/js/jquery.min.js"></script>
-    <script src="https://cdn.17tuiguang.cn/lp/list/js/jquery.tap.js"></script>
+    
     <script>
         //rem
         ! function (e, i) {
@@ -22,8 +20,32 @@
             };
             s(), e.addEventListener && i.addEventListener(m, s, !1)
         }(document, window);
+
+        function testingHost() {
+			var host = window.location.host;
+			var hostStrArr = host.split('.');
+			return hostStrArr[hostStrArr.length];
+		}
+
+		var hostEd = testingHost() ? testingHost() : 'cn';
+
+		//onload
+		function onLoad(){
+			
+			document.write(
+                
+                '<link rel="stylesheet" href="//cdn.17tuiguang.'+ hostEd +'/lp/list/css/list_'+ hostEd +'.css" />',
+                '<script src="//cdn.17tuiguang.'+ hostEd +'/lp/list/js/jquery.min.js"><\/script>',
+                '<script src="//cdn.17tuiguang.'+ hostEd +'/lp/list/js/jquery.tap.js"><\/script>',
+                '<script src="//cdn.17tuiguang.'+ hostEd +'/lp/list/js/list_ed04.js"><\/script>'
+                    
+			);
+		
+		}
+
+		onLoad();
     </script>
-    <script src="https://cdn.17tuiguang.cn/lp/list/js/list_ed03.js"></script>
+    
 </head>
 
 <body>

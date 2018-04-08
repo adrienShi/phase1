@@ -7,9 +7,6 @@
 	<meta content="telephone=no" name="format-detection" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
 	<title>划出你喜欢</title>
-	<link rel="stylesheet" href="https://cdn.17tuiguang.cn/lp/act_102/css/index.css" />
-	<script src="https://cdn.17tuiguang.cn/lp/act_102/js/jq-3.1.1.min.js"></script>
-	<script src="https://cdn.17tuiguang.cn/lp/act_102/js/jquery.tap.js"></script>
 	<script>
 		//rem
 		! function (e, i) {
@@ -21,8 +18,32 @@
 			};
 			s(), e.addEventListener && i.addEventListener(m, s, !1)
 		}(document, window);
+
+		function testingHost() {
+			var host = window.location.host;
+			var hostStrArr = host.split('.');
+			return hostStrArr[hostStrArr.length];
+		}
+
+		var hostEd = testingHost() ? testingHost() : 'cn';
+
+		//onload
+		function onLoad(){
+			
+			document.write(
+				'<link rel="stylesheet" href="//cdn.17tuiguang.'+ hostEd +'/lp/act_102/css/index_'+ hostEd +'.css" />',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_102/js/jq-3.1.1.min.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_102/js/jquery.tap.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_102/js/index_ed02.js"><\/script>'
+			);
+
+		}
+
+		onLoad();
+
 	</script>
-	<script src="https://cdn.17tuiguang.cn/lp/act_102/js/index.js"></script>
+	
+	
 </head>
 <body class="win">
 
@@ -33,72 +54,6 @@
 	<div class="c">	
 
 		<ul class="page_box">
-
-			<li class="page">
-				<div class="t">
-					<div class="box">
-						<div class="calendar"></div>
-						<div class="container">
-							<a href="javascript:;" class="individual">1</a>
-						</div>
-					</div>
-				</div>
-				<div class="b">
-					<p class="txt">艺龙网：价值388元体验课一节</p>
-				</div>
-			</li>
-			<li class="page">
-				<div class="t">
-					<div class="box">
-						<div class="calendar"></div>
-						<div class="container">
-							<a href="javascript:;" class="individual">2</a>
-						</div>
-					</div>
-				</div>
-				<div class="b">
-					<p class="txt">艺龙网：价值388元体验课一节</p>
-				</div>
-			</li>
-			<li class="page">
-				<div class="t">
-					<div class="box">
-						<div class="calendar"></div>
-						<div class="container">
-							<a href="javascript:;" class="individual">3</a>
-						</div>
-					</div>
-				</div>
-				<div class="b">
-					<p class="txt">艺龙网：价值388元体验课一节</p>
-				</div>
-			</li>
-			<li class="page">
-				<div class="t">
-					<div class="box">
-						<div class="calendar"></div>
-						<div class="container">
-							<a href="javascript:;" class="individual">4</a>
-						</div>
-					</div>
-				</div>
-				<div class="b">
-					<p class="txt">艺龙网：价值388元体验课一节</p>
-				</div>
-			</li>
-			<li class="page">
-				<div class="t">
-					<div class="box">
-						<div class="calendar"></div>
-						<div class="container">
-							<a href="javascript:;" class="individual">5</a>
-						</div>
-					</div>
-				</div>
-				<div class="b">
-					<p class="txt">艺龙网：价值388元体验课一节</p>
-				</div>
-			</li>
 
 		</ul>
 		<b class="deal_btn"></b>

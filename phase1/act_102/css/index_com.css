@@ -1,0 +1,298 @@
+* {
+  outline: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html {
+  font-family: "Helvetica Neue", Helvetica, Hiragino Sans GB, "Microsoft Yahei", STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0 auto;
+  font-size: 12px;
+  line-height: 1;
+  max-width: 750px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-touch-callout: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  outline: 0;
+}
+i {
+  font-style: normal;
+}
+b,
+strong {
+  font-weight: 700;
+}
+dfn {
+  font-style: normal;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+}
+input,
+textarea,
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Hiragino Sans GB, "Microsoft Yahei", STHeiTi, Arial, sans-serif;
+}
+textarea {
+  resize: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+  text-align: right;
+  line-height: 1.5em;
+  font-family: "Helvetica Neue", Helvetica, Hiragino Sans GB, "Microsoft Yahei", STHeiTi, Arial, sans-serif;
+}
+.clearfix {
+  content: '';
+  clear: both;
+  display: table;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/bg.png');
+  background-repeat: repeat-y;
+  text-align: center;
+  touch-action: none;
+}
+.h {
+  position: relative;
+  width: 100%;
+  height: 1.22rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/hader.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-bottom: 0.215rem;
+}
+.h .explain_btn {
+  position: absolute;
+  width: 0.35rem;
+  height: 0.325rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/explain_btn.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  right: 0.05rem;
+  bottom: 0.09rem;
+}
+.c {
+  position: relative;
+  display: inline-block;
+  width: 3.275rem;
+  height: 3.69rem;
+}
+.c .page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: transform 0.4s linear;
+  transform: translate(0, 0, 0);
+  will-change: transform;
+}
+.c .t {
+  width: 100%;
+  height: 2.52rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/box_t.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.c .t .box {
+  position: relative;
+  left: 0.315rem;
+  top: 0.225rem;
+}
+.c .t .box .calendar {
+  width: 2.68rem;
+  height: 0.58rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/calendar.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.c .t .box .container {
+  position: relative;
+  width: 2.65rem;
+  height: 1.5rem;
+  background: white;
+}
+.c .t .box .container .individual {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.65rem;
+  height: 1.5rem;
+  background: white;
+  border: 1px solid #e6b1b1;
+  line-height: 1.5rem;
+  font-size: 0.25rem;
+}
+.c .b {
+  position: relative;
+  width: 100%;
+  height: 1.17rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/box_b.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  padding-top: 0.275rem;
+}
+.c .b .txt {
+  font-size: 0.16rem;
+}
+.c .deal_btn {
+  width: 1.005rem;
+  height: 0.78rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/deal_btn.png');
+  left: 0.4rem;
+}
+.c .fail_btn {
+  width: 1rem;
+  height: 0.78rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/fail_btn.png');
+  right: 0.4rem;
+}
+.c .deal_btn,
+.c .fail_btn {
+  position: absolute;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  bottom: -0.35rem;
+  z-index: 999;
+}
+.alertbg_p60 {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: block;
+}
+.rule_bar {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+}
+.rule_bar .text_bar {
+  position: fixed;
+  z-index: 99999;
+  width: 3rem;
+  height: 3.42rem;
+  background-color: #ff3d3c;
+  border-radius: 0.15rem;
+  -webkit-border-radius: 0.15rem;
+  -moz-border-radius: 0.15rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 0.15rem 0.2rem;
+  color: #fff;
+  font-family: "SimSun";
+}
+.rule_bar .text_bar .activity {
+  position: absolute;
+  top: -0.535rem;
+  left: 50%;
+  margin-left: -0.715rem;
+  width: 1.425rem;
+  height: 0.32rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/activity.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.rule_bar .text_bar p {
+  font-size: 0.12rem;
+  line-height: 0.21rem;
+  text-align: left;
+}
+.rule_bar .text_bar .mb75 {
+  margin-bottom: 0.2rem;
+}
+.rule_bar .text_bar .close {
+  position: absolute;
+  width: 0.19rem;
+  height: 0.19rem;
+  right: -0.19rem;
+  top: -0.765rem;
+  background-image: url('//cdn.17tuiguang.com/lp/act_102/images/close.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}

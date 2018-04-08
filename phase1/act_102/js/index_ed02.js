@@ -66,7 +66,7 @@ function moveStart() {
         $(".win").off();
 
 		if (now_y < -20) {
-
+			jump();
 			loopPage();
 
 		} else if (now_y > 20) {
@@ -125,7 +125,8 @@ function deal_start() {
                     'transform': 'translate(50%,-180%) rotate(9deg)'
                 });
                 setTimeout(function(){
-                    loopPage();
+                    jump();
+                  	loopPage();
                     btn_flag = true;
                 },400);
         });
@@ -169,10 +170,67 @@ $(document).on("touchmove",function(e){
     }
 });
 
+function page_load() {
+    $.ajax({
+        url: 'https://lp.17tuiguang.'+ hostEd +'/ashow?adNum=6',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        data: {}
+    })
+    .done(function (r) {
+        console.log(r);
+        if (r.status == '1') {
+            push_Page(r);
+        } else {
+            alert('链接超时！')
+        }
+
+    })
+    .fail(function () {
+        console.log("error");
+        alert('链接超时！');
+    })
+    .always(function () {
+        console.log("complete");
+    });
+
+    function push_Page(d) {
+        var pageBox = $('.page_box');
+        var pageList = '';
+        for (var i = 0; i < d.result.length; i++) {
+            
+            var page ='<li class="page" jump="'+d.result[i].url+'">'
+                        +'<div class="t">'
+                            +'<div class="box">'
+                                +'<div class="calendar"></div>'
+                                +'<div class="container">'
+                                    +'<a href="'+d.result[i].url+'" class="individual">'
+                                        +'<img src="'+d.result[i].pic+'" width="100%" height="100%" alt="'+d.result[i].creativeName+':'+d.result[i].title+'" style="display:block;" >'
+                                    +'</a>'
+                                +'</div>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="b">'
+                            +'<p class="txt">'+d.result[i].creativeName+':'+d.result[i].title+'</p>'
+                        +'</div>'
+                    +'</li>';
+            pageList += page;
+        };
+        pageBox.html(pageList);
+      	deal_start();
+        fail_start();
+        explain_start();
+        moveStart();
+    } 
+}
+
+function jump() {
+   var url = $('.page').eq(0).attr('jump');
+   window.location.href = url;
+}
+
 $(function(){
-    deal_start();
-    fail_start();
-    explain_start();
-    moveStart();
+	page_load();
 });
 
