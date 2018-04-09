@@ -150,8 +150,9 @@ function clearFinger(){
 
 //中奖装载 
 function winning_load(fn){
+    var host = window.location.host;
     $.ajax({
-        url: '//lp.17tuiguang.'+ hostEd +'/ashow',
+        url: '//'+ host +'/ashow',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',

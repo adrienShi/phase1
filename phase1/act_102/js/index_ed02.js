@@ -171,8 +171,9 @@ $(document).on("touchmove",function(e){
 });
 
 function page_load() {
+    var host = window.location.host;
     $.ajax({
-        url: '//lp.17tuiguang.'+ hostEd +'/ashow?adNum=6',
+        url: '//'+ host +'/ashow?adNum=6',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',

@@ -13,9 +13,11 @@ $(function(){
 		+'</li>';
 		return $(tpl);
 	}
+
+	var host = window.location.host;
 	
 	$.ajax({
-        url: 'https://lp.17tuiguang.'+ hostEd +'/alist',
+        url: '//'+ host +'/alist',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback'

@@ -1,6 +1,5 @@
-//开关
+//旋转开关
 var flag = true;
-
 //次数
 var count = 8;
 
@@ -21,6 +20,18 @@ function fst_prize_start(){
     });
 }
 
+//转轮圆灯闪烁
+function neonStart(){
+    var disk = $('.disk .side');
+    setInterval(function(){
+        if(disk.hasClass('side_2')){
+            disk.removeClass('side_2');
+        }else{
+            disk.addClass('side_2');
+        }
+    },600);
+}
+
 //手机类型检测
 function chaekPhone(){
     var u = navigator.userAgent;
@@ -29,6 +40,53 @@ function chaekPhone(){
     if (isiOS) {
         $('.ios').show();
     }
+}
+
+//旋转
+function rotateFn(){
+    var surface = $('.surface');
+    flag = false;
+    surface.stopRotate()
+    surface.removeClass('disk_animation')
+    surface.rotate({
+        angle: 0,
+        animateTo: 1920,        // 旋转角度 *360
+        duration: 3000,         // 旋转时间
+        callback:function (){   //旋转后执行
+            winning_load(function(){
+                winningShow();
+                setTimeout(function(){
+                    surface.addClass('disk_animation');
+                    flag = true;
+                },500);
+            })
+            
+        }
+    });
+};
+
+//点击抽奖
+function rotateEv(){
+    if(flag){
+        if(count){
+            rotateFn();
+            count--;
+            upCount();
+            
+        } else {
+            window.location.href="//lp.17tuiguang."+ hostEd +"/sclk"; 
+            //alert('今日抽奖次数已用完!');
+            //跳转其他游戏
+        }
+    }
+}
+
+//点击按钮
+function rotateStart(){
+    $('.pointer').tap(function(e){
+        e.preventDefault();
+        rotateEv();
+    });
 }
 
 //说明弹窗启动
@@ -54,7 +112,7 @@ function winningShow(){
         $('#winning').show(function(){
             //
         })
-    });
+    })
 }
 
 //中奖关闭绑定
@@ -62,8 +120,32 @@ function winningCloseStart(){
     $('#winning .close').tap(function(e){
         e.preventDefault();
         $('#winning').hide();
-        bagInit();
     });
+}
+
+//手指点击
+function fingerTap(){
+    $('#finger').tap(function(e){
+        e.preventDefault();
+        rotateEv();
+    })
+}
+
+//手指动画
+function finger_animation(){
+    var c = 0
+    timer = setInterval(function(){
+        c++;
+        if(c > 4) c = 1;
+        $('#finger').removeClass();
+        $('#finger').addClass('finger_animation_' + c);
+    }, 500);
+}
+
+//清除手指
+function clearFinger(){
+    $('#finger').hide();
+    clearInterval(timer);
 }
 
 //中奖装载 
@@ -98,87 +180,34 @@ function winning_load(fn){
     });
 }
 
-//福袋循环点亮动画
-function card_ligh(){
-    var oBag = $('.bag_bar li');
-    var lst = 0;
-    timer = setInterval(function(){
-        oBag.removeClass('bag_type');
-        if(lst == 5) {
-            oBag.eq(lst).addClass('bag_type');
-            lst = 0;
-        } else {
-            oBag.eq(lst).addClass('bag_type');
-            lst++;
-        }
-    },800);
-}
-
-//福袋重置
-function bagInit(){
-    bagStop();
-    var oBag = $('.bag_bar li');
-    var t = 200;
-    oBag.removeClass('active').removeClass('shake');
-    oBag.addClass('init');
-    oBag.each(function( index, el ){
-        var that = $(this);
-        t += 200;
-        setTimeout(function(){
-            that.removeClass('init');
-            if(index == 5) {
-                card_ligh();
-                flag = true;
-            }
-        }, t);
-    });
-}
-
-//福袋循环动画停止
-function bagStop(){
-    clearInterval(timer);
-}
-
-//福袋点击动画
-function bagShake(el){
-    bagStop();
-    el.addClass('active').addClass('shake');
-}
-
-//福袋点击事件
-function bagTap(){
-    $('.bag_bar li').tap(function(){
-        if(flag) {
-            if(count){
-                count--;
-                upCount();
-                flag = false;
-                bagShake($(this));
-                setTimeout(function(){
-                    winningShow();
-                }, 800);
-            } else {
-                window.location.href="//lp.17tuiguang."+ hostEd +"/sclk"; 
-                //alert('今日抽奖次数已用完!');
-                //跳转其他游戏
-            }
-            
-        }       
-    });
-}
-
 function setHostEd(){
     $('#my_prize_bt').attr('href','//lp.17tuiguang.'+ hostEd +'/lp/list.html');
+    $('#title_txt').attr('src','//cdn.17tuiguang.'+ hostEd +'/lp/act_100/images/title_txt.png');
+}
+
+function isWeiXin() {
+   
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 $(function(){
     setHostEd();
-    fst_prize_start();
-    bagTap();
-    bagInit();
     chaekPhone();
+    if(!isWeiXin()){
+        fst_prize_start();
+    }
     ruleStart();
-    winningCloseStart();
+    neonStart();
     upCount();
+    rotateStart();
+    winningCloseStart();
+    fingerTap();
+    finger_animation();
 });
 

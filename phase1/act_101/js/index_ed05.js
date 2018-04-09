@@ -171,9 +171,22 @@ function setHostEd(){
     $('#my_prize_bt').attr('href','//lp.17tuiguang.'+ hostEd +'/lp/list.html');
 }
 
+function isWeiXin() {
+   
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 $(function(){
     setHostEd();
-    fst_prize_start();
+    if(!isWeiXin()){
+        fst_prize_start();
+    }
     bagTap();
     bagInit();
     chaekPhone();
