@@ -115,8 +115,7 @@ function loopPage(){
         .append(clon)
         .off();
     moveStart();
-    pageJump();
-    counter();
+
 }
 
 function deal_start() {
@@ -180,12 +179,13 @@ $(document).on("touchmove",function(e){
 
 function page_load() {
     var host = window.location.host;
+
     $.ajax({
         url: '//'+ host +'/ashow?adNum=6',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {}
+        data: {'ctype': '1'}
     })
     .done(function (r) {
         console.log(r);
@@ -210,19 +210,14 @@ function page_load() {
         for (var i = 0; i < d.result.length; i++) {
             
             var page ='<li class="page" jump="'+d.result[i].url+'">'
-                        +'<div class="t">'
-                            +'<div class="box">'
-                                +'<div class="calendar"></div>'
-                                +'<div class="container">'
-                                    +'<a href="'+d.result[i].url+'" class="individual">'
-                                        +'<img src="'+d.result[i].pic+'" width="100%" height="100%" alt="'+d.result[i].creativeName+':'+d.result[i].title+'" style="display:block;" >'
-                                    +'</a>'
-                                +'</div>'
+                        +'<a href="'+d.result[i].url+'" class="individual">'
+                            +'<div class="t">'        
+                                +'<img src="'+d.result[i].pic+'" width="100%" height="100%" alt="'+d.result[i].creativeName+':'+d.result[i].title+'" style="display:block;" >'
                             +'</div>'
-                        +'</div>'
-                        +'<div class="b">'
-                            +'<p class="txt">'+d.result[i].creativeName+':'+d.result[i].title+'</p>'
-                        +'</div>'
+                            +'<div class="b">'
+                                +'<p class="txt">'+d.result[i].creativeName+':'+d.result[i].title+'</p>'
+                            +'</div>'
+                        +'</a>'
                     +'</li>';
             pageList += page;
         };
@@ -231,23 +226,27 @@ function page_load() {
         fail_start();
         explain_start();
         moveStart();
-        pageJump();
+
     } 
 }
 
-function counter(){
+function test() {
     var host = window.location.host;
+
     $.ajax({
-        url: '//'+ host +'/ashow?adNum=1&pn=1',
+        url: '//'+ host +'/ashow?adNum=1',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {}
+        data: {
+            'ctype': '1',
+            'pn': '1'
+        }
     })
     .done(function (r) {
         console.log(r);
         if (r.status == '1') {
-            push_Page(r);
+            
         } else {
             alert('链接超时！')
         }
@@ -262,18 +261,13 @@ function counter(){
     });
 }
 
-function pageJump(){
-    $('.page').unbind('tap').tap(function(e){
-        jump();
-    });
-}
-
 function jump() {
    var url = $('.page').eq(0).attr('jump');
    window.location.href = url;
 }
 
 $(function(){
-	page_load();
+    page_load();
+    test();
 });
 
