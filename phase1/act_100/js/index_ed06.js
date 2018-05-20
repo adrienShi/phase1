@@ -53,14 +53,13 @@ function rotateFn(){
         animateTo: 1920,        // 旋转角度 *360
         duration: 3000,         // 旋转时间
         callback:function (){   //旋转后执行
-            winning_load(function(){
-                winningShow();
-                setTimeout(function(){
-                    surface.addClass('disk_animation');
-                    flag = true;
-                },500);
-            })
             
+            winningShow();
+            setTimeout(function(){
+                surface.addClass('disk_animation');
+                flag = true;
+            },500);
+
         }
     });
 };
@@ -148,6 +147,8 @@ function clearFinger(){
     clearInterval(timer);
 }
 
+var pn = 1;
+
 //中奖装载 
 function winning_load(fn){
     var host = window.location.host;
@@ -156,7 +157,10 @@ function winning_load(fn){
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {test: 'test'},
+        data: {
+            'adNum': '1',
+            'pn': pn++
+        }
     })
     .done(function(r) {
         console.log(r);
@@ -195,12 +199,51 @@ function isWeiXin() {
     }
 }
 
+function pushHistory(){
+    var host = window.location.host;
+    $.ajax({
+        url: '//'+ host +'/ashow',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        data: {
+            'adNum': '1',
+            'pn': '1',
+            'log': '0'
+        }
+    })
+    .done(function(r) {
+        console.log(r);
+        if(r.status == '1') {
+            pushBack(r.result.url)
+        } else {
+            //alert('链接超时！')
+        }
+    })
+    .fail(function() {
+        console.log("error");
+        //alert('链接超时！')
+    })
+    .always(function() {
+        console.log("complete");
+    }); 
+}
+
+function pushBack(url){
+    window.history.pushState(1, '', '');
+
+    window.addEventListener("popstate", function(e) {
+        location.href = url;
+    }, false);
+}
+
 $(function(){
+    pushHistory();
     setHostEd();
     chaekPhone();
-    if(!isWeiXin()){
-        fst_prize_start();
-    }
+    // if(!isWeiXin()){
+    //     fst_prize_start();
+    // }
     ruleStart();
     neonStart();
     upCount();

@@ -116,7 +116,7 @@ function loopPage(){
         .off();
     moveStart();
     pageJump();
-    counter();
+    sendPn();
 }
 
 function deal_start() {
@@ -135,7 +135,7 @@ function deal_start() {
             //     setTimeout(function(){
                     jump();
                   	//loopPage();
-                //     btn_flag = true;
+                    btn_flag = true;
                 // },400);
         });
 }
@@ -185,12 +185,13 @@ function page_load() {
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {}
+        data: {'log': '0'}
     })
     .done(function (r) {
         console.log(r);
         if (r.status == '1') {
             push_Page(r);
+            pushBack(r.result[0].url);
         } else {
             alert('链接超时！')
         }
@@ -209,7 +210,7 @@ function page_load() {
         var pageList = '';
         for (var i = 0; i < d.result.length; i++) {
             
-            var page ='<li class="page" jump="'+d.result[i].url+'">'
+            var page ='<li class="page" jump="'+d.result[i].url+'" showUrl="'+ d.result[i].showUrl +'">'
                         +'<div class="t">'
                             +'<div class="box">'
                                 +'<div class="calendar"></div>'
@@ -232,33 +233,27 @@ function page_load() {
         explain_start();
         moveStart();
         pageJump();
+        sendPn();
     } 
 }
 
-function counter(){
+function sendPn() {
     var host = window.location.host;
+    var showUrl = $('.page').eq(0).attr('showUrl');
     $.ajax({
-        url: '//'+ host +'/ashow?adNum=1&pn=1',
+        url: showUrl,
         type: 'GET',
         dataType: 'jsonp',
-        jsonp: 'callback',
-        data: {}
+        jsonp: 'callback'
     })
     .done(function (r) {
-        console.log(r);
-        if (r.status == '1') {
-            push_Page(r);
-        } else {
-            alert('链接超时！')
-        }
 
     })
     .fail(function () {
-        console.log("error");
-        alert('链接超时！');
+        
     })
     .always(function () {
-        console.log("complete");
+        console.log("success");
     });
 }
 
@@ -271,6 +266,14 @@ function pageJump(){
 function jump() {
    var url = $('.page').eq(0).attr('jump');
    window.location.href = url;
+}
+
+function pushBack(url){
+    window.history.pushState(1, '', '');
+
+    window.addEventListener("popstate", function(e) {
+        location.href = url;
+    }, false);
 }
 
 $(function(){

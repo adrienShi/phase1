@@ -66,6 +66,8 @@ function winningCloseStart(){
     });
 }
 
+var pn = 1;
+
 //中奖装载 
 function winning_load(fn){
     var host = window.location.host;
@@ -74,7 +76,10 @@ function winning_load(fn){
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {test: 'test'},
+        data: {
+            'adNum': '1',
+            'pn': pn++
+        }
     })
     .done(function(r) {
         console.log(r);
@@ -178,11 +183,49 @@ function isWeiXin() {
     }
 }
 
+function pushHistory(){
+    var host = window.location.host;
+    $.ajax({
+        url: '//'+ host +'/ashow',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        data: {
+            'adNum': '1',
+            'pn': '1',
+            'log': '0'
+        }
+    })
+    .done(function(r) {
+        console.log(r);
+        if(r.status == '1') {
+            pushBack(r.result.url)
+        } else {
+            //alert('链接超时！')
+        }
+    })
+    .fail(function() {
+        console.log("error");
+        //alert('链接超时！')
+    })
+    .always(function() {
+        console.log("complete");
+    }); 
+}
+
+function pushBack(url){
+    window.history.pushState(1, '', '');
+
+    window.addEventListener("popstate", function(e) {
+        location.href = url;
+    }, false);
+}
+
 $(function(){
-    
-    if(!isWeiXin()){
-        fst_prize_start();
-    }
+    pushHistory();
+    // if(!isWeiXin()){
+    //     fst_prize_start();
+    // }
     bagTap();
     bagInit();
     chaekPhone();

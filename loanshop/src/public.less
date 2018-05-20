@@ -1,0 +1,130 @@
+//rem基准值 （数值 / @rem）
+@rem: 200rem;
+
+//图片根地址
+.image_url(@url){
+    background-image: url('@{url}');
+}
+
+//图片居中
+.image_center(){
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+//图片背景100%
+.image_100(){
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+//去除默认
+* {
+	outline: 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box
+}
+
+html {
+	font-family: "PingFang-SC-Semibold","微软雅黑";
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased
+}
+
+body {
+	margin: 0 auto;
+	font-size: 12px;
+	//color: #333;
+	line-height: 1;
+	//width: 100%;
+    max-width: 750px;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	-webkit-touch-callout: none
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+	display: block
+}
+
+a {
+	text-decoration: none;
+	color: inherit
+}
+
+a:active {
+	outline: 0
+}
+
+i {
+    font-style:normal;
+}
+
+b,strong {
+	font-weight: 700
+}
+
+dfn {
+	font-style: normal
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+	max-width: 100%
+}
+
+input,textarea,button {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue",Helvetica,Hiragino Sans GB,"Microsoft Yahei",STHeiTi,Arial,sans-serif
+}
+
+textarea {
+	resize: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+td,th {
+	padding: 0
+}
+
+h1,h2,h3,h4,h5,h6,p,figure,form,blockquote {
+	margin: 0
+}
+
+ul,ol,li,dl,dd {
+	margin: 0;
+	padding: 0
+}
+
+ul,ol,li {
+	list-style: none
+}
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+	color: #ccc;
+	text-align: right;
+	line-height: 1.5em;
+	font-family: "Helvetica Neue",Helvetica,Hiragino Sans GB,"Microsoft Yahei",STHeiTi,Arial,sans-serif
+}
+
+.clearfix {
+	content: '';
+	clear: both;
+	display: table
+}

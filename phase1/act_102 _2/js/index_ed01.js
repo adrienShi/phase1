@@ -57,8 +57,7 @@ function moveStart() {
 				btnState(deal_btn, 1.2);
                 btnState(fail_btn, 1);
 			}
-
-		}
+        }
 	});
 
 	container.on("touchend", function (e) {
@@ -98,6 +97,7 @@ function moveStart() {
 }
 
 function loopPage(){
+    
     var clon = $('.page')
         .eq(0)
         .clone()
@@ -115,7 +115,7 @@ function loopPage(){
         .append(clon)
         .off();
     moveStart();
-
+    sendPn();
 }
 
 function deal_start() {
@@ -131,11 +131,11 @@ function deal_start() {
             //         'transition': 'transform 0.4s linear',
             //         'transform': 'translate(50%,-180%) rotate(9deg)'
             //     });
-            //     setTimeout(function(){
-                    jump();
-                  	//loopPage();
-                //     btn_flag = true;
-                // },400);
+            // setTimeout(function(){
+                jump();
+                //loopPage();
+                btn_flag = true;
+            //},400);
         });
 }
 
@@ -170,12 +170,7 @@ function explain_start() {
     });
 }
 
-$(document).on("touchmove",function(e){
-    if(!$(e.target).hasClass('page_box'))
-    {
-        e.preventDefault();
-    }
-});
+
 
 function page_load() {
     var host = window.location.host;
@@ -185,12 +180,13 @@ function page_load() {
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {'ctype': '1'}
+        data: {'ctype': '2', 'log': '0'}
     })
     .done(function (r) {
         console.log(r);
         if (r.status == '1') {
             push_Page(r);
+            pushBack(r.result[0].url);
         } else {
             alert('链接超时！')
         }
@@ -209,13 +205,14 @@ function page_load() {
         var pageList = '';
         for (var i = 0; i < d.result.length; i++) {
             
-            var page ='<li class="page" jump="'+d.result[i].url+'">'
+            var page ='<li class="page" jump="'+d.result[i].url+'" showUrl="'+ d.result[i].showUrl +'">'
                         +'<a href="'+d.result[i].url+'" class="individual">'
                             +'<div class="t">'        
                                 +'<img src="'+d.result[i].pic+'" width="100%" height="100%" alt="'+d.result[i].creativeName+':'+d.result[i].title+'" style="display:block;" >'
                             +'</div>'
                             +'<div class="b">'
-                                +'<p class="txt">'+d.result[i].creativeName+':'+d.result[i].title+'</p>'
+                                +'<p class="tit">'+d.result[i].creativeName+'</p>'
+                                +'<p class="txt">'+d.result[i].title+'</p>'
                             +'</div>'
                         +'</a>'
                     +'</li>';
@@ -226,38 +223,27 @@ function page_load() {
         fail_start();
         explain_start();
         moveStart();
-
+        sendPn();
     } 
 }
 
-function test() {
+function sendPn() {
     var host = window.location.host;
-
+    var showUrl = $('.page').eq(0).attr('showUrl');
     $.ajax({
-        url: '//'+ host +'/ashow?adNum=1',
+        url: showUrl,
         type: 'GET',
         dataType: 'jsonp',
-        jsonp: 'callback',
-        data: {
-            'ctype': '1',
-            'pn': '1'
-        }
+        jsonp: 'callback'
     })
     .done(function (r) {
-        console.log(r);
-        if (r.status == '1') {
-            
-        } else {
-            alert('链接超时！')
-        }
 
     })
     .fail(function () {
-        console.log("error");
-        alert('链接超时！');
+        
     })
     .always(function () {
-        console.log("complete");
+        console.log("success");
     });
 }
 
@@ -266,8 +252,22 @@ function jump() {
    window.location.href = url;
 }
 
+function pushBack(url){
+    window.history.pushState(1, '', '');
+
+    window.addEventListener("popstate", function(e) {
+        location.href = url;
+    }, false);
+}
+
+// $(document).on("touchmove",function(e){
+//     if(!$(e.target).hasClass('page_box'))
+//     {
+//         e.preventDefault();
+//     }
+// });
+
 $(function(){
     page_load();
-    test();
 });
 
