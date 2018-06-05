@@ -239,6 +239,12 @@ function pushBack(url){
     }
 }
 
+function choiceTxt(){
+    if(getParam('cash') !== '0'){
+        $('#title_txt').attr('src', '//cdn.17tuiguang.'+ hostEd +'/lp/act_101/images/title_txt_2.png');
+    }
+}
+
 function getParam(paramName) {
     paramValue = "", isFound = !1;
     if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
@@ -249,6 +255,7 @@ function getParam(paramName) {
 }
 
 $(function(){
+    choiceTxt();
     pushHistory();
     setHostEd();
     chaekPhone();

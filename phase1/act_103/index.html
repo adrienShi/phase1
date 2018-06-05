@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title>幸运大翻牌</title>
+	<script>
+		//rem
+		! function (e, i) {
+			var t = e.documentElement,
+				m = "orientationchange" in window ? "orientationchange" : "resize";
+			var s = function () {
+				var e = t.clientWidth;
+				e > 750 && (e = 750), t.style.fontSize = 200 * (e / 750) + "px"
+			};
+			s(), e.addEventListener && i.addEventListener(m, s, !1)
+		}(document, window);
+
+		function testingHost() {
+			var host = window.location.host;
+			var hostStrArr = host.split('.');
+			return hostStrArr[hostStrArr.length-1];
+		}
+
+		var hostEd = testingHost() ? testingHost() : 'cn';
+
+		//onload
+		function onLoad(){
+			
+			document.write(
+				'<link rel="stylesheet" href="//cdn.17tuiguang.'+ hostEd +'/lp/act_103/css/index_ed01.css" />',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_103/js/jq-3.1.1.min.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_103/js/jquery.tap.js"><\/script>',
+				'<script src="//cdn.17tuiguang.'+ hostEd +'/lp/act_103/js/index_ed01.js"><\/script>'
+			);
+
+		}
+
+		onLoad();
+
+	</script>
+
+</head>
+<body class="win">
+
+	<b class="explain_btn"></b>
+
+	<a href="javascript:;" class="my_prize_bt" ></a>
+
+	<div class="c">
+
+		<span class="mark"></span>
+		
+		<ul class="box clearfix">
+			<li class="ml40 mt40"><b><i></i></b></li>
+			<li class="mt40"><b><i></i></b></li>
+			<li class="mt40"><b><i></i></b></li>
+			<li class="ml40"><b><i></i></b></li>
+			<li class="no_img"></li>
+			<li><b><i></i></b></li>
+			<li class="ml40"><b><i></i></b></li>
+			<li><b><i></i></b></li>
+			<li><b><i></i></b></li>
+		</ul>
+
+	</div>
+
+	<div class="rule_bar">
+		<div class="alertbg_p60"></div>
+		<div class="text_bar">
+			<i class="close"></i>
+			<h3 class="activity"></h3>
+			<p>活动说明：翻开卡片，了解优惠券详情；</p>
+			<p>-----------------------------------</p>
+			<p>优惠券一：4万元免息借款券</p>
+			<p>优惠券二：免费领取1对1外教试听课程</p>
+			<p>优惠券三：百度有钱花5万信用额度</p>
+			<p>优惠券四：10万信用额度</p>
+			<p>-----------------------------------</p>
+			<p>重要声明：</p>
+			<p>1、抽中优惠券，将会有专门的客服联系，请耐心等待。</p>
+			<p>2、优惠券奖品的使用规则详见每个优惠券的介绍页</p>
+			<p>3、通过非法途径获得奖品，主办方有权不提供奖品，如有必要，将采取法律途径维权。</p>
+			<p>客服电话：010-53601083</p>			
+		</div>
+	</div>
+
+	<div class="shadow_public"></div>
+
+	<div class="winning">
+		<div class="shadow"></div>
+		<i class="close"></i>
+		<div class="box">
+			<a href="javascript:;">
+				<img class="banner_img"  alt="">			
+				<p class="banner_text">恭喜您获得OPPO R11手机一部</p>
+				<b class="winning_btn"></b>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>
