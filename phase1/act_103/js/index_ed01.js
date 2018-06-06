@@ -1,19 +1,20 @@
 var cardFlag = true;
 
 function cardTap(){
-    $('.box li').off('tap').on('tap',function(event){
+    $('ul.box li').off('tap').on('tap',function(event){
+        var num = event.target.getAttribute('num');
         if (cardFlag) {
             cardFlag = false;
             var that = $(this)
             if(that.hasClass('taping')){
-                winningPop();
+                winningPop(num);
                 return;
             }
             that.addClass('taping');
             setTimeout(function(){
                 that.find('b').css('display', 'block');
                 setTimeout(function(){
-                    winningPop();
+                    winningPop(num);
                 }, 200);
                 
             }, 150);
@@ -22,13 +23,17 @@ function cardTap(){
     });
 }
 
-function winningPop(){
-    $('.winning').show();
+function winningPop(num){
+    var caed = $('ul.box li').eq(num);
+    $('.winning .box a').attr('href', caed.attr('jump'));
+    $('.winning .box img').attr({'src': caed.attr('pic'), 'alt': caed.attr('txt')});
+    $('.winning .box p').text(caed.attr('txt'));
     cardFlag = true;
     $('.winning .close').off('tap').on('tap',function(event){
         $('.winning').hide();
         event.preventDefault();
     });
+    $('.winning').show();
 }
 
 function explainPop(){
@@ -48,22 +53,22 @@ function explainPop(){
     });
 }
 
-
-
 function page_load() {
-    //var host = window.location.host;
-    var host = 'https://lp.17tuiguang.com';
-    $.ajax({
+
+    var host = window.location.host;
+
+    $.ajax({ 
         url: '//'+ host +'/ashow?adNum=6',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
-        data: {'ctype': '3', 'log': '0'}
+        data: {'ctype': '1', 'log': '0'}
     })
     .done(function (r) {
         console.log(r);
         if (r.status == '1') {
-           
+            loadData(r.result);
+            pushBack();
         } else {
             alert('链接超时！')
         }
@@ -78,24 +83,21 @@ function page_load() {
     });
 }
 
-function sendPn() {
-    var host = window.location.host;
-    var showUrl = $('.page').eq(0).attr('showUrl');
-    $.ajax({
-        url: showUrl,
-        type: 'GET',
-        dataType: 'jsonp',
-        jsonp: 'callback'
-    })
-    .done(function (r) {
-
-    })
-    .fail(function () {
-        
-    })
-    .always(function () {
-        console.log("success");
-    });
+function loadData(d){
+    var cardArr = $('ul.box li');
+    for (var i = 0; i < d.length; i++) {
+        cardArr.eq(i).attr({
+            'jump': d[i].url,
+            'txt': d[i].title,
+            'pic': d[i].pic
+        });
+        cardArr.eq(i).find('i').css("background-image", "url('"+ d[i].pic +"')");
+    }
+    if(d.length < 8){
+        for (var i = d.length; i < 9; i++) {
+            $('ul.box li').eq(i).hide();
+        }
+    }
 }
 
 function jump() {
@@ -108,7 +110,8 @@ function pushBack(url){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            location.href = url;
+            //location.href = url;
+            location.href = 'https://www.yuanshanbx.com/m/activity/zh/bwcxbz.html?channel=wtbwcxbz';
         }, false);
     }
 }
