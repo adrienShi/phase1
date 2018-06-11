@@ -158,6 +158,7 @@ html {
   padding: 0.15rem 0.2rem;
   color: #fff;
   font-family: "SimSun";
+  overflow: auto;
 }
 .rule_bar .text_bar .activity {
   position: absolute;
