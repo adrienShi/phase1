@@ -58,7 +58,7 @@ function page_load() {
     var host = window.location.host;
 
     $.ajax({ 
-        url: '//'+ host +'/ashow?adNum=6',
+        url: '//'+ host +'/ashow?adNum=8',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -84,7 +84,7 @@ function page_load() {
 }
 
 function loadData(d){
-    var cardArr = $('ul.box li');
+    var cardArr = $('ul.box li.s');
     for (var i = 0; i < d.length; i++) {
         cardArr.eq(i).attr({
             'jump': d[i].url,
@@ -92,11 +92,6 @@ function loadData(d){
             'pic': d[i].pic
         });
         cardArr.eq(i).find('i').css("background-image", "url('"+ d[i].pic +"')");
-    }
-    if(d.length < 8){
-        for (var i = d.length; i < 9; i++) {
-            $('ul.box li').eq(i).hide();
-        }
     }
 }
 
