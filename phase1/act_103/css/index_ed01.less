@@ -154,14 +154,17 @@ html{
 
 .rule_bar {
     display: none;
+    width: 100%;
+    height: 100%;
     position: fixed;
     z-index: 9999;
     .close {
         position: absolute;
         width: 38 / @rem;
         height: 38 / @rem;
-        right: -38 / @rem;
-        top: -153 / @rem;
+        right: 10%;
+        top: 10%;
+        z-index: 99999;
         .image_url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAASFBMVEX///8AAAD///////////////////////////////////////////////////////////////////////////////////////8M9tD2AAAAGHRSTlO4ALQ1M6uYlFBSr5BkIBsJQjt7U3qseUPOXW5jAAABEUlEQVQ4y5XU25KDIAwG4CSChlY81Hb3/d903Qk0YOgMzS2fE4TwA5YV+TF5Ij89OFYLBVvDCEWNYW0x9nApz4YtEzRqWmo23KBZt6FkG8GHok3ZoMq6IbNFO7b6LonJ7u+bm0lXaXbbXf5DGIvS7tpLHP+zVc5rx+xU4S7nt54syILD7FShk7VwsnRDM2anCud0bwgxb8a9XVa61QgMxhkFAX7AOKPgCSMYZ9SJPBhn1IkIjDMKqJN1Nu39hWffgQSjnGscbzSKyLhort6RfHK5ejzSIKlKTgfpqMdSlDodSzvk6nTIu55M5wPse85d4fBbRs3+KWr2r4NLil9X9OJmqB51qB6XUNWKIUd0qCP6D4XmCSYwdgELAAAAAElFTkSuQmCC');
         .image_100();
     }
@@ -326,9 +329,9 @@ to { transform: rotateY(360deg); }
         .image_100();
         width: 41 / @rem;
         height: 41 / @rem;
-        right: 60 / @rem;
-        top: 60 / @rem;
-        z-index: 2;
+        right: 10 / @rem;
+        top: 10 / @rem;
+        z-index: 3;
     }
     .box {
         position: absolute;
