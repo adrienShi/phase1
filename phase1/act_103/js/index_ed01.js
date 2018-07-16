@@ -11,6 +11,7 @@ function cardTap(){
                 return;
             }
             that.addClass('taping');
+            sendPn(num);
             setTimeout(function(){
                 that.find('b').css('display', 'block');
                 setTimeout(function(){
@@ -89,10 +90,30 @@ function loadData(d){
         cardArr.eq(i).attr({
             'jump': d[i].url,
             'txt': d[i].title,
-            'pic': d[i].pic
+            'pic': d[i].pic,
+            'showUrl': d[i].showUrl
         });
         cardArr.eq(i).find('i').css("background-image", "url('"+ d[i].pic +"')");
     }
+}
+
+function sendPn(n) {
+    var showUrl = $('ul.box li').eq(n).attr('showUrl');
+    $.ajax({
+        url: showUrl,
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback'
+    })
+    .done(function (r) {
+
+    })
+    .fail(function () {
+        
+    })
+    .always(function () {
+        console.log("success");
+    });
 }
 
 function jump() {
@@ -106,7 +127,7 @@ function pushBack(url){
 
         window.addEventListener("popstate", function(e) {
             //location.href = url;
-            location.href = 'https://www.yuanshanbx.com/m/activity/zh/bwcxbz.html?channel=wtbwcxbz';
+            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }

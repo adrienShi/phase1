@@ -257,7 +257,8 @@ function pushBack(url){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            location.href = url;
+            //location.href = url;
+            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }

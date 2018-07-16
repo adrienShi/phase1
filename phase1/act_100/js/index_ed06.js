@@ -184,10 +184,6 @@ function winning_load(fn){
     });
 }
 
-function setHostEd(){
-    $('#title_txt').attr('src','//cdn.17tuiguang.'+ hostEd +'/lp/act_100/images/title_txt.png');
-}
-
 function isWeiXin() {
    
     var ua = window.navigator.userAgent.toLowerCase();
@@ -234,14 +230,15 @@ function pushBack(url){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            location.href = url;
+            //location.href = url;
+            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }
 
 function choiceTxt(){
-    if(getParam('cash') !== '0'){
-        $('#title_txt').attr('src', '//cdn.17tuiguang.'+ hostEd +'/lp/act_101/images/title_txt_2.png');
+    if(getParam('cash') == '0'){
+        $('#title_txt').attr('src', '//cdn.17tuiguang.'+ hostEd +'/lp/act_100/images/title_txt_2.png');
     }
 }
 
@@ -257,7 +254,6 @@ function getParam(paramName) {
 $(function(){
     choiceTxt();
     pushHistory();
-    setHostEd();
     chaekPhone();
     // if(!isWeiXin()){
     //     fst_prize_start();

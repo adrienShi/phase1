@@ -16,7 +16,7 @@ $(function(){
 	var host = window.location.host;
 	
 	$.ajax({ 
-		url: '//'+ host +'/ashow?adNum=6',
+		url: '//'+ host +'/ashow?adNum=1',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -43,7 +43,7 @@ $(function(){
 	});
 
 	$.ajax({ 
-		url: '//'+ host +'/ashow?adNum=6',
+		url: '//'+ host +'/ashow?adNum=8',
         type: 'GET',
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -85,7 +85,7 @@ $(function(){
 	
 			window.addEventListener("popstate", function(e) {
 				//location.href = url;
-				location.href = 'https://www.yuanshanbx.com/m/activity/zh/bwcxbz.html?channel=wtbwcxbz';
+				location.href = 'http://zp.bjgit.com/dzp/a/index.html';
 			}, false);
 		}
 	}

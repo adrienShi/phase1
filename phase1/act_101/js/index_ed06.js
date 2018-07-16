@@ -218,13 +218,14 @@ function pushBack(url){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            location.href = url;
+            //location.href = url;
+            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }
 
 function choiceTxt(){
-    if(getParam('cash') !== '0'){
+    if(getParam('cash') == '0'){
         $('html').css('background-image', 'url(//cdn.17tuiguang.'+ hostEd +'/lp/act_101/images/bg_2.png)');
     }
 }
