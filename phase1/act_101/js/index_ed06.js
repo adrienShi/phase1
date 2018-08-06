@@ -186,31 +186,16 @@ function isWeiXin() {
 function pushHistory(){
     var host = window.location.host;
     $.ajax({
-        url: '//'+ host +'/ashow',
+        url: '//'+ host +'/backclk',
         type: 'GET',
         dataType: 'jsonp',
-        jsonp: 'callback',
-        data: {
-            'adNum': '1',
-            'pn': '1',
-            'log': '0'
-        }
+        jsonp: 'callback'
     })
     .done(function(r) {
-        console.log(r);
-        if(r.status == '1') {
-            pushBack(r.result.url)
-        } else {
-            //alert('链接超时！')
-        }
+        console.log(r.url);
+        pushBack(r.url);
+
     })
-    .fail(function() {
-        console.log("error");
-        //alert('链接超时！')
-    })
-    .always(function() {
-        console.log("complete");
-    }); 
 }
 
 function pushBack(url){
@@ -218,8 +203,8 @@ function pushBack(url){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            //location.href = url;
-            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
+            location.href = url;
+            //location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }
@@ -239,6 +224,19 @@ function getParam(paramName) {
     return paramValue == "" && (paramValue = null), paramValue
 }
 
+function getTel(){
+    var host = window.location.host;
+    $.ajax({
+        url: '//'+ host +'/api/tel',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback'
+    })
+    .done(function(r) {
+        $('.tel').text('客服电话：' + r.tel);
+    })
+}
+
 $(function(){
     choiceTxt();
     pushHistory();
@@ -251,5 +249,6 @@ $(function(){
     ruleStart();
     winningCloseStart();
     upCount();
+    getTel();
 });
 

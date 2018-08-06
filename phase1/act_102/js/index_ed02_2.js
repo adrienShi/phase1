@@ -191,7 +191,6 @@ function page_load() {
         console.log(r);
         if (r.status == '1') {
             push_Page(r);
-            pushBack(r.result[0].url);
         } else {
             alert('链接超时！')
         }
@@ -268,13 +267,28 @@ function jump() {
    window.location.href = url;
 }
 
+function pushHistory(){
+    var host = window.location.host;
+    $.ajax({
+        url: '//'+ host +'/backclk',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback'
+    })
+    .done(function(r) {
+        console.log(r.url);
+        pushBack(r.url);
+
+    })
+}
+
 function pushBack(url){
     if(getParam('backdraw') !== '0'){
         window.history.pushState(1, '', '');
 
         window.addEventListener("popstate", function(e) {
-            //location.href = url;
-            location.href = 'http://zp.bjgit.com/dzp/a/index.html';
+            location.href = url;
+            //location.href = 'http://zp.bjgit.com/dzp/a/index.html';
         }, false);
     }
 }
@@ -288,7 +302,22 @@ function getParam(paramName) {
     return paramValue == "" && (paramValue = null), paramValue
 }
 
+function getTel(){
+    var host = window.location.host;
+    $.ajax({
+        url: '//'+ host +'/api/tel',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'callback'
+    })
+    .done(function(r) {
+        $('.tel').text('客服电话：' + r.tel);
+    })
+}
+
 $(function(){
 	page_load();
+    pushHistory();
+    getTel();
 });
 

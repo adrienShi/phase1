@@ -79,16 +79,32 @@ $(function(){
 		return paramValue == "" && (paramValue = null), paramValue
 	}
 
-	function pushBack(url){
-		if(getParam('backdraw') !== '0'){
-			window.history.pushState(1, '', '');
-	
-			window.addEventListener("popstate", function(e) {
-				//location.href = url;
-				location.href = 'http://zp.bjgit.com/dzp/a/index.html';
-			}, false);
-		}
+	function pushHistory(){
+	    var host = window.location.host;
+	    $.ajax({
+	        url: '//'+ host +'/backclk',
+	        type: 'GET',
+	        dataType: 'jsonp',
+	        jsonp: 'callback'
+	    })
+	    .done(function(r) {
+	        console.log(r.url);
+	        pushBack(r.url);
+
+	    })
 	}
-	pushBack();
+
+	function pushBack(url){
+	    if(getParam('backdraw') !== '0'){
+	        window.history.pushState(1, '', '');
+
+	        window.addEventListener("popstate", function(e) {
+	            location.href = url;
+	            //location.href = 'http://zp.bjgit.com/dzp/a/index.html';
+	        }, false);
+	    }
+	}
+
+	pushHistory();
 })
 
