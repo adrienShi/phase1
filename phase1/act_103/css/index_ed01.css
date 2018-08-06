@@ -347,7 +347,8 @@ html {
   width: 3.09rem;
   height: 3.11rem;
   left: 50%;
-  top: 2.25rem;
+  top: 50%;
+  margin-top: -1.555rem;
   margin-left: -1.545rem;
   background-color: #fff;
   border: 0.04rem solid #43b4f1;
